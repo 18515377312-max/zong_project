@@ -1,0 +1,16 @@
+[gold]
+read_verilog pmux_case02_pipeline.v
+hierarchy -check
+proc
+memory_unpack
+
+[gate]
+read_verilog out02_pipeline_eqy.v
+hierarchy -check
+proc
+memory_unpack
+
+[strategy sby]
+use sby
+depth 1
+engine smtbmc

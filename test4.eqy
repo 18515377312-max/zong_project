@@ -1,0 +1,16 @@
+[gold]
+read_verilog test4.v
+hierarchy -check
+proc
+memory_unpack
+
+[gate]
+read_verilog out_test4_eqy.v
+hierarchy -check
+proc
+memory_unpack
+
+[strategy sby]
+use sby
+depth 1
+engine smtbmc

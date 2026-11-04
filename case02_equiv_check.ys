@@ -1,0 +1,25 @@
+design -reset
+read_verilog pmux_case02_pipeline.v
+hierarchy -check -top pmux_case02_pipeline
+proc
+opt
+memory_unpack
+flatten
+opt_clean
+design -save gold
+
+design -reset
+read_verilog out02_pipeline_eqy.v
+hierarchy -check -top pmux_case02_pipeline
+proc
+opt
+memory_unpack
+flatten
+opt_clean
+design -save gate
+
+equiv_miter -top equiv
+equiv_simple
+equiv_struct
+equiv_simple -verbose
+stat

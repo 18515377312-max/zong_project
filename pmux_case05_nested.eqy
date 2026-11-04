@@ -1,0 +1,29 @@
+[gold]
+read_verilog pmux_case05_nested.v
+hierarchy -check
+proc
+opt
+memory_unpack
+flatten
+opt_clean
+
+[gate]
+read_verilog out05_nested_eqy.v
+hierarchy -check
+proc
+opt
+memory_unpack
+flatten
+opt_clean
+
+[strategy sby_fast]
+use sby
+depth 1
+engine smtbmc
+timeout 300
+
+[strategy sby_full]
+use sby
+depth 3
+engine smtbmc
+timeout 1800

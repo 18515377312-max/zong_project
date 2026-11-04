@@ -1,0 +1,28 @@
+# ========== 未优化基线（仅 proc 展开）==========
+# 1 pmux_case01_balanced
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case01_balanced.v
+hierarchy -check -top pmux_case01_balanced
+proc
+stat
+
+# 2 pmux_case02_pipeline
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case02_pipeline.v
+hierarchy -check -top pmux_case02_pipeline
+proc
+stat
+
+# 3 pmux_case03_crossbar
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case03_crossbar.v
+hierarchy -check -top pmux_case03_crossbar
+proc
+stat
+
+# 4 pmux_case04_feedback
+design -reset
+read_verilog /mnt/hgfs/yosys_share/pmux_case04_feedback.v
+hierarchy -check -top pmux_case04_feedback
+proc
+stat
